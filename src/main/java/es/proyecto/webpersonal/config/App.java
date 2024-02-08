@@ -1,6 +1,7 @@
 package es.proyecto.webpersonal.config;
 
 
+import java.beans.PropertyVetoException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -30,7 +31,7 @@ import jakarta.persistence.EntityManagerFactory;
 @PropertySource("classpath:project.properties")
 public class App 
 {
-    public Environment evn;
+    public Environment env;
     
     private Logger myLogger= Logger.getLogger(getClass().getName());
     
@@ -67,10 +68,29 @@ public class App
     }
     
     
-    
-    
-    //Definir bean para seguridad (dejar para mas tarde)
-    //Tambien definir el metodo para convertir un string a entero 
-    
+    @Bean
+    public DataSource securityDataSource() {
+    	ComboPooledDataSource secutiryDataSoruce = new ComboPooledDataSource();
+    	try {
+    		secutiryDataSoruce.setDriverClass(env.getProperty("jdbc.driver"));
+    	}catch(PropertyVetoException ex) {
+    		ex.printStackTrace();
+    	}
+    	secutiryDataSoruce.setJdbcUrl(env.getProperty("jdbc.url"));
+    	secutiryDataSoruce.setUser(env.getProperty("jdbc.user"));
+    	secutiryDataSoruce.setPassword(env.getProperty("jdbc.password"));
+    	secutiryDataSoruce.setInitialPoolSize(getStringToInt("coneccion.pool.initialPoolSize"));
+    	secutiryDataSoruce.setMinPoolSize(getStringToInt("coneccion.pool.minPoolSize"));
+    	secutiryDataSoruce.setMaxPoolSize(getStringToInt("coneccion.pool.maxPoolSize"));
+    	secutiryDataSoruce.setMaxIdleTime(getStringToInt("coneccion.pool.maxIdleTime"));
+    	return secutiryDataSoruce;
+    }
+   
+    //Metodo para convertir un string a entero 
+    private int getStringToInt(String entero) {
+    	String propVal = env.getProperty(entero);
+    	int propPool = Integer.parseInt(propVal);
+    	return propPool;
+    }
     
 }
