@@ -1,42 +1,46 @@
 package es.proyecto.webpersonal.config;
 
-import org.springframework.context.annotation.Bean;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.User.UserBuilder;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityAppConfig {
+public class SecurityAppConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Autowired
+	private DataSource seguridadDataSource; 
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests (authorizeRequests -> 
-                authorizeRequests
-                    .requestMatchers("/administradores/**").hasRole("ADMINISTRADOR")
-            )
-	            .formLogin(loginConfigurer ->
-	            loginConfigurer
-	                .loginPage("/administracionlogin")
-	                .permitAll()
-	                .defaultSuccessUrl("/administracion") // URL después del inicio de sesión exitoso
-		        )
-		        .logout(logoutConfigurer ->
-		            logoutConfigurer
-		                .logoutUrl("/administracionlogin")
-		                .logoutSuccessUrl("/administracion") // URL después del cierre de sesión exitoso
-		        )
-		        .exceptionHandling(exceptionHandlingConfigurer ->
-		            exceptionHandlingConfigurer.accessDeniedPage("/administracionerror")
-		        );
-    }
+		auth.jdbcAuthentication().dataSource(seguridadDataSource);
+	}
+	
+	//Metodo encargado de configurar nuestra seguridad web (login logout etc.....)
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		
+		//http.authorizeRequests().anyRequest().authenticated().and().formLogin()
+		http.authorizeRequests()
+		.antMatchers("/administradores/**") 
+		.hasAnyRole("ADMINISTRADOR")//Aqui le decimos que solo los administradores pueden ir  a /administradores
+		.and().formLogin()
+		.loginPage("/miFormularioLogin") //la pagina
+		.loginProcessingUrl("/autenticacionUsuario") //La url
+		.permitAll()
+		.and().logout().permitAll()
+		.and().exceptionHandling().accessDeniedPage("/acceso-denegado"); //Con esto redirigimos a la pagina de error		
+	}
+	
+	
+	
+	
 }
-
-

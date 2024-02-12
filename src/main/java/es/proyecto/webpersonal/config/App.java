@@ -4,9 +4,10 @@ package es.proyecto.webpersonal.config;
 import java.beans.PropertyVetoException;
 import java.util.Properties;
 import java.util.logging.Logger;
-
+import org.hibernate.SessionFactory;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,25 +23,44 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(basePackages = "es.proyecto.webpersonal")
+@ComponentScan(basePackages = {"es.proyecto.webpersonal"})
 @PropertySource("classpath:project.properties")
 public class App 
 {
-    public Environment env;
+    @Autowired
+	public Environment env;
     
     private Logger myLogger= Logger.getLogger(getClass().getName());
     
     @Bean
+    public DataSource securityDataSource() {
+    	ComboPooledDataSource secutiryDataSoruce = new ComboPooledDataSource();
+    	try {
+    		secutiryDataSoruce.setDriverClass(env.getProperty("jdbc.driver"));
+    	}catch(PropertyVetoException ex) {
+    		ex.printStackTrace();
+    	}
+    	secutiryDataSoruce.setJdbcUrl(env.getProperty("jdbc.url"));
+    	secutiryDataSoruce.setUser(env.getProperty("jdbc.user"));
+    	secutiryDataSoruce.setPassword(env.getProperty("jdbc.password"));
+    	secutiryDataSoruce.setInitialPoolSize(getStringToInt("connection.pool.initialPoolSize"));
+    	secutiryDataSoruce.setMinPoolSize(getStringToInt("connection.pool.minPoolSize"));
+    	secutiryDataSoruce.setMaxPoolSize(getStringToInt("connection.pool.maxPoolSize"));
+    	secutiryDataSoruce.setMaxIdleTime(getStringToInt("connection.pool.maxIdleTime"));
+    	return secutiryDataSoruce;
+    }
+    
+    @Bean
     public ViewResolver viewResolver() {
     	InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-    	viewResolver.setPrefix("/WEB-INF/view/");
-    	viewResolver.setSuffix("jsp");
-    	return viewResolver();
+    	viewResolver.setPrefix("/WEB-INF/views/");
+    	viewResolver.setSuffix(".jsp");
+    	return viewResolver;
     }
     
     @Bean
@@ -55,42 +75,26 @@ public class App
     private Properties hibernateProperties(Environment environment) {
     	Properties properties = new Properties();
     	properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
-    	properties.put("hibernate.show.sql", environment.getProperty("hibernate.show.sql"));
+    	properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
     	properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
     	return properties;
     }
     
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-    	JpaTransactionManager transactionManager =  new JpaTransactionManager();
-    	 transactionManager.setEntityManagerFactory(entityManagerFactory);
-    	 return transactionManager;
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return transactionManager;
     }
     
-    
-    @Bean
-    public DataSource securityDataSource() {
-    	ComboPooledDataSource secutiryDataSoruce = new ComboPooledDataSource();
-    	try {
-    		secutiryDataSoruce.setDriverClass(env.getProperty("jdbc.driver"));
-    	}catch(PropertyVetoException ex) {
-    		ex.printStackTrace();
-    	}
-    	secutiryDataSoruce.setJdbcUrl(env.getProperty("jdbc.url"));
-    	secutiryDataSoruce.setUser(env.getProperty("jdbc.user"));
-    	secutiryDataSoruce.setPassword(env.getProperty("jdbc.password"));
-    	secutiryDataSoruce.setInitialPoolSize(getStringToInt("coneccion.pool.initialPoolSize"));
-    	secutiryDataSoruce.setMinPoolSize(getStringToInt("coneccion.pool.minPoolSize"));
-    	secutiryDataSoruce.setMaxPoolSize(getStringToInt("coneccion.pool.maxPoolSize"));
-    	secutiryDataSoruce.setMaxIdleTime(getStringToInt("coneccion.pool.maxIdleTime"));
-    	return secutiryDataSoruce;
-    }
-   
     //Metodo para convertir un string a entero 
     private int getStringToInt(String entero) {
     	String propVal = env.getProperty(entero);
     	int propPool = Integer.parseInt(propVal);
     	return propPool;
     }
-    
 }
+
+
+
+
