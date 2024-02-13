@@ -2,33 +2,18 @@ package es.proyecto.webpersonal.dao.impl;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-
-
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import es.proyecto.webpersonal.dao.TecnologiasDao;
 import es.proyecto.webpersonal.entities.Tecnologias;
 
 @Repository
 public class TecnologiasRepository implements TecnologiasDao {
-	
-	@Autowired
-	private SessionFactory sesionFactory;  
-	
+
 	@Override
-	@Transactional
 	public List<Tecnologias> getTecnologias() {
-		Session mySession = sesionFactory.getCurrentSession();
-		Query <Tecnologias> queryTecnologias = mySession.createQuery("from Tecnologias", Tecnologias.class);
-		List <Tecnologias> listTecnologias = queryTecnologias.getResultList();
- 		return listTecnologias;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
