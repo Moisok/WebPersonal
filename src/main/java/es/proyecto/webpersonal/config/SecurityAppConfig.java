@@ -30,17 +30,8 @@ public class SecurityAppConfig extends WebSecurityConfigurerAdapter {
 		
 		//http.authorizeRequests().anyRequest().authenticated().and().formLogin()
 		http.authorizeRequests()
-		.antMatchers("/administradores/**") 
+		.antMatchers("/adminzone/**") 
 		.hasAnyRole("ADMINISTRADOR")//Aqui le decimos que solo los administradores pueden ir  a /administradores
-		.and().formLogin()
-		.loginPage("/miFormularioLogin") //la pagina
-		.loginProcessingUrl("/autenticacionUsuario") //La url
-		.permitAll()
-		.and().logout().permitAll()
-		.and().exceptionHandling().accessDeniedPage("/acceso-denegado"); //Con esto redirigimos a la pagina de error		
+		.and().formLogin();	
 	}
-	
-	
-	
-	
 }
