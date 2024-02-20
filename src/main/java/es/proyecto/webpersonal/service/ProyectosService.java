@@ -1,13 +1,12 @@
-package es.proyecto.webpersonal.dao;
+package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
 import es.proyecto.webpersonal.entities.Proyectos.Proyectos;
 
-public interface ProyectosDao {
+public interface ProyectosService {
 	
-	public List<Proyectos> getProyectos();
+public List<Proyectos> getProyectos();
 	
 	public Proyectos getProyecto(int id);
 	

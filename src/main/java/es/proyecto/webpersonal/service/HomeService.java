@@ -1,8 +1,8 @@
-package es.proyecto.webpersonal.dao;
+package es.proyecto.webpersonal.service;
 
 import es.proyecto.webpersonal.entities.Home.Home;
 
-public interface HomeDao {
+public interface HomeService {
 	
 	public Home getDescripcion();
 	

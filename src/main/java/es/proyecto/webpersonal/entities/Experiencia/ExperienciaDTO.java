@@ -1,34 +1,20 @@
-package es.proyecto.webpersonal.entities;
+package es.proyecto.webpersonal.entities.Experiencia;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-
-@Entity
-@Table(name="experiencia")
-public class Experiencia {
+public class ExperienciaDTO {
 	
-	@Id
-	@Column(name="id")
 	private int id;
-	
-	@Column(name="fecha")
+
 	private String fecha;
-	
-	@Column(name="puesto")
+
 	private String puesto;
-	
-	@Column(name="localizacion")
+
 	private String localizacion;
-	
-	@Column(name="descripcion")
+
 	private String descripcion;
-	
-	@Column(name="activo")
+
 	private int activo;
 
-	public Experiencia(String fecha, String puesto, String localizacion, String descripcion, int activo) {
+	public ExperienciaDTO(String fecha, String puesto, String localizacion, String descripcion, int activo) {
 		this.fecha = fecha;
 		this.puesto = puesto;
 		this.localizacion = localizacion;
@@ -36,7 +22,7 @@ public class Experiencia {
 		this.activo = activo;
 	}
 
-	public Experiencia() {
+	public ExperienciaDTO() {
 	}
 
 	public int getId() {

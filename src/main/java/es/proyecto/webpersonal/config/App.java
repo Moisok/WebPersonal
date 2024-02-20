@@ -3,8 +3,8 @@ package es.proyecto.webpersonal.config;
 
 import java.beans.PropertyVetoException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.hibernate.SessionFactory;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +13,23 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.CacheControl;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import javax.persistence.EntityManagerFactory;
 
+//@EnableWebMvc
 @Configuration
-@EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"es.proyecto.webpersonal"})
 @PropertySource("classpath:project.properties")
@@ -34,8 +37,6 @@ public class App
 {
     @Autowired
 	public Environment env;
-    
-    private Logger myLogger= Logger.getLogger(getClass().getName());
     
     @Bean
     public DataSource securityDataSource() {
@@ -88,11 +89,13 @@ public class App
     }
     
     //Metodo para convertir un string a entero 
-    private int getStringToInt(String entero) {
+    //Revisar
+    public int getStringToInt(String entero) {
     	String propVal = env.getProperty(entero);
     	int propPool = Integer.parseInt(propVal);
     	return propPool;
     }
+    
 }
 
 

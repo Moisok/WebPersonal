@@ -1,4 +1,4 @@
-package es.proyecto.webpersonal.entities;
+package es.proyecto.webpersonal.entities.Home;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

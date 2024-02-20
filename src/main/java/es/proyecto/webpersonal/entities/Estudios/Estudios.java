@@ -1,4 +1,4 @@
-package es.proyecto.webpersonal.entities;
+package es.proyecto.webpersonal.entities.Estudios;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="proyectos")
-public class Proyectos {
-	
+@Table(name="estudios")
+public class Estudios {
+
 	@Id
 	@Column(name="id")
 	private int id;
@@ -19,28 +19,28 @@ public class Proyectos {
 	@Column(name="titulo")
 	private String titulo;
 	
+	@Column(name="localizacion")
+	private String localizacion;
+	
+	@Column(name="centro")
+	private String centro;
+	
 	@Column(name="descripcion")
 	private String descripcion;
 	
-	@Column(name="foto")
-	private String foto;
-	
-	@Column(name="link")
-	private String link;
-	
 	@Column(name="activo")
-	private String activo;
+	private int activo;
 
-	public Proyectos(String fecha, String titulo, String descripcion, String foto, String link, String activo) {
+	public Estudios(String fecha, String titulo, String localizacion, String descripcion, String centro, int activo) {
 		this.fecha = fecha;
 		this.titulo = titulo;
+		this.localizacion = localizacion;
 		this.descripcion = descripcion;
-		this.foto = foto;
-		this.link = link;
 		this.activo = activo;
+		this.centro = centro;
 	}
 
-	public Proyectos() {
+	public Estudios() {
 	}
 
 	public int getId() {
@@ -67,6 +67,14 @@ public class Proyectos {
 		this.titulo = titulo;
 	}
 
+	public String getLocalizacion() {
+		return localizacion;
+	}
+
+	public void setLocalizacion(String localizacion) {
+		this.localizacion = localizacion;
+	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -75,30 +83,20 @@ public class Proyectos {
 		this.descripcion = descripcion;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
-	}
-
-	public String getActivo() {
+	public int getActivo() {
 		return activo;
 	}
 
-	public void setActivo(String activo) {
+	public void setActivo(int activo) {
 		this.activo = activo;
 	}
-	
-	
-	
+
+	public String getCentro() {
+		return centro;
+	}
+
+	public void setCentro(String centro) {
+		this.centro = centro;
+	}
+
 }

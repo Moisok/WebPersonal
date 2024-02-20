@@ -1,12 +1,13 @@
-package es.proyecto.webpersonal.dao;
+package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
 import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
 
-public interface HabilidadesDao {
+
+public interface HabilidadesService {
 	
-	public List<Habilidades> getHabilidades();
+public List<Habilidades> getHabilidades();
 	
 	public Habilidades getHabilidad(int id);
 	
@@ -17,4 +18,5 @@ public interface HabilidadesDao {
 	public void deleteHabilidad(int id);
 	
 	public void enabledHabilidad(int id);
+	
 }

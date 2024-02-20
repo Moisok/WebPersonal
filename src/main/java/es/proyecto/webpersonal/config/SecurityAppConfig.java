@@ -27,11 +27,11 @@ public class SecurityAppConfig extends WebSecurityConfigurerAdapter {
 	//Metodo encargado de configurar nuestra seguridad web (login logout etc.....)
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
 		//http.authorizeRequests().anyRequest().authenticated().and().formLogin()
 		http.authorizeRequests()
 		.antMatchers("/adminzone/**") 
 		.hasAnyRole("ADMINISTRADOR")//Aqui le decimos que solo los administradores pueden ir  a /administradores
-		.and().formLogin();	
+		.and().formLogin()
+		.and().csrf().disable();
 	}
 }

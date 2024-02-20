@@ -1,12 +1,12 @@
-package es.proyecto.webpersonal.dao;
+package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
 import es.proyecto.webpersonal.entities.Experiencia.Experiencia;
 
-public interface ExperienciaDao {
+public interface ExperienciaService {
 	
-	public List <Experiencia> getExperiencias ();
+public List <Experiencia> getExperiencia ();
 	
 	public Experiencia getExperiencia(int id); 
 	
