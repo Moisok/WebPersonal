@@ -49,7 +49,7 @@ public class ExperienciaRepository implements ExperienciaDao {
 	@Override
 	public void enableExperiencia(int id) {
 		Experiencia exp = getExperiencia(id);
-		exp.setActivo(exp.getActivo() == 0 ? 1 : 1);
+		exp.setActivo(exp.getActivo() == 0 ? 1 : 0);
 	}
 	
 }

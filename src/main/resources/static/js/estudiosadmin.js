@@ -1,17 +1,17 @@
 function cargarDatos() {
-	    var selectedId = document.getElementById("habilidadSelect").value;
+	    var selectedId = document.getElementById("estudioSelect").value;
 	
 	    var form = document.createElement("form");
 	    form.setAttribute("method", "post");
-	    form.setAttribute("action", "/webpersonal/adminzone/gestionarhabilidades");
+	    form.setAttribute("action", "/webpersonal/adminzone/gestionarestudios");
+		
+		var inputIdEstudio = document.createElement("input");
+	    inputIdEstudio.setAttribute("type", "hidden");
+	    inputIdEstudio.setAttribute("name", "idEstudio");
+	    inputIdEstudio.setAttribute("value", selectedId);
+	    form.appendChild(inputIdEstudio);
 	
-	    var inputIdHabilidad = document.createElement("input");
-	    inputIdHabilidad.setAttribute("type", "hidden");
-	    inputIdHabilidad.setAttribute("name", "idHabilidad");
-	    inputIdHabilidad.setAttribute("value", selectedId);
-	    form.appendChild(inputIdHabilidad);
-
-	    var clickedButton = document.activeElement.id;
+		var clickedButton = document.activeElement.id;
 	    var inputAction = document.createElement("input");
 	    inputAction.setAttribute("type", "hidden");
 	    inputAction.setAttribute("name", "action");
@@ -31,13 +31,13 @@ function cargarDatos() {
 	            break;
 	        default:
 	            inputAction.setAttribute("value", ""); 
-	            break;
+				break;
 	    }
 	
 	    form.appendChild(inputAction);
-
+	
 	    document.body.appendChild(form);
-
+	
 	    form.submit();
     
 	}
@@ -46,11 +46,10 @@ function cargarDatos() {
         document.getElementById("action").value = action;
     }
 	
-
 	function reload(){
-	    document.getElementById("nuevoNombre").value = "";
+		document.getElementById("nuevoNombre").value = "";
 	    document.getElementById("nuevoActivo").value = "";
-	    document.getElementById("idHabilidad").value = "";
+	    document.getElementById("idTecnologia").value = "";
 		setTimeout(function() {
 	        location.reload();
 	    }, 1000);

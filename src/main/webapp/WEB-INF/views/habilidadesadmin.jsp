@@ -32,7 +32,7 @@
 	    <tr>
 	        <td>Id:</td>
 	        <td>
-	            <input input type="text" name="idHabilidad" id="idHabilidad" value="${habilidad.id}" readonly/>
+	            <input type="text" name="idHabilidad" id="idHabilidad" value="${habilidad.id}" readonly/>
 	        </td>
 	    </tr>
 	    <tr>
@@ -53,19 +53,19 @@
 	    <tr>
 	        <td>Id:</td>
 	        <td>
-	            <input input type="text" name="idHabilidad" id="idHabilidad" type="text" readonly/>
+	            <input type="text" name="idHabilidad" id="idHabilidad" readonly/>
 	        </td>
 	    </tr>
 	    <tr>
 	        <td>Nombre:</td>
 	        <td>
-	            <input type="text" name="nuevoNombre" id="nuevoNombre" type="text"/>
+	            <input type="text" name="nuevoNombre" id="nuevoNombre"/>
 	        </td>
 	    </tr>
 	    <tr>
 	        <td>¿Activo?:</td>
 	        <td>
-	            <input type="text" name="nuevoActivo" id="nuevoActivo" type="text"/>
+	            <input type="text" name="nuevoActivo" id="nuevoActivo"/>
 	        </td>
 	    </tr>
 	    <%

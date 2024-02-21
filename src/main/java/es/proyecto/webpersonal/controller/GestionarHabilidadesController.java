@@ -24,17 +24,13 @@ public class GestionarHabilidadesController {
 	
 	@RequestMapping
 	public String listarHabilidades(Model  ModelHabilidades) {
-	//public String prueba(Model Tecnologias) {
-		//Obtener la lista de tecnologias
 		List<Habilidades> lasHabilidades = habilidadesService.getHabilidades();
-		//Agregar tecnologias al modelo
 		ModelHabilidades.addAttribute("habilidades", lasHabilidades);
 		return "habilidadesadmin";
 	}
 	
-
 	@PostMapping
-	public String gestionarTcnologia(@RequestParam(name = "action", required = false) String action,
+	public String gestionarHabilidades(@RequestParam(name = "action", required = false) String action,
             @RequestParam(name = "idHabilidad", required = false) Integer id,
             @RequestParam(name = "nuevoNombre", required = false) String nuevoNombre,
             @RequestParam(name = "nuevoActivo", required = false) String nuevoActivo,

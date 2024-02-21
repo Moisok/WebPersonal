@@ -19,5 +19,15 @@ public class CambiosRealizadosController {
 		return "redirect:/adminzone/gestionarhabilidades";
 	}
 	
+	@RequestMapping("/experiencia")
+	public String volverExperiencias() {
+		return "redirect:/adminzone/gestionarexperiencia";
+	}
+	
+	@RequestMapping("/estudio")
+	public String volverEstudios() {
+		return "redirect:/adminzone/gestionarestudios";
+	}
+	
 	
 }

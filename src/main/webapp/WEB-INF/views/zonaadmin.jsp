@@ -8,8 +8,8 @@
 <title>Administracion web personal</title>
 </head>
 <body>
-	<a href="/pagina">Ir a Estudios</a><br>
-	<a href="/pagina">Ir a Experiencia</a><br>
+	<a href=<c:url value="/adminzone/gestionarestudios"/>>Ir a Estudios</a><br>
+	<a href=<c:url value="/adminzone/gestionarexperiencia"/>>Ir a Experiencia</a><br>
 	<a href=<c:url value="/adminzone/gestionarhabilidades"/>>Ir a Habilidades</a><br>
 	<a href="/pagina">Ir a Home</a><br>
 	<a href="/pagina">Ir a Proyectos</a><br>
