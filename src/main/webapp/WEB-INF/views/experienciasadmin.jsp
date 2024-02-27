@@ -7,6 +7,22 @@
  <title>Administrar Experiencias</title>
  <meta charset="ISO-8859-1">
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/experienciasadmin.js"></script>
+  <style>
+    table {
+      width: 100%; /* O el ancho deseado */
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px; /* O el padding deseado */
+      text-align: left;
+    }
+    #nuevaDescripcion {
+	  height: 100px; /* O la altura deseada */
+	  width: 800px; /* O el ancho deseado */
+	}
+  </style>
 </head>
 <body>
 	<center>
@@ -57,8 +73,8 @@
 	    <tr>
 	        <td>Descripcion:</td>
 	        <td>
-	            <input type="text" name="nuevaDescripcion" id="nuevaDescripcion" value="${experiencia.descripcion}"/>
-	        </td>
+	            <textarea name="nuevaDescripcion" id="nuevaDescripcion">${estudio.descripcion}</textarea>
+    		</td>
 	        
 	    </tr>
 	    <tr>
@@ -98,7 +114,7 @@
 	    <tr>
 	        <td>Descripcion:</td>
 	        <td>
-	            <input type="text" name="nuevaDescripcion" id="nuevaDescripcion"/>
+	            <textarea type="text" name="nuevaDescripcion" id="nuevaDescripcion"/>
 	        </td>
 	        
 	    </tr>

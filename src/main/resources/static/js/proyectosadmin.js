@@ -1,15 +1,15 @@
 function cargarDatos() {
-	    var selectedId = document.getElementById("estudioSelect").value;
+	    var selectedId = document.getElementById("proyectoSelect").value;
 	
 	    var form = document.createElement("form");
 	    form.setAttribute("method", "post");
-	    form.setAttribute("action", "/webpersonal/adminzone/gestionarestudios");
+	    form.setAttribute("action", "/webpersonal/adminzone/gestionarproyectos");
 		
-		var inputIdEstudio = document.createElement("input");
-	    inputIdEstudio.setAttribute("type", "hidden");
-	    inputIdEstudio.setAttribute("name", "idEstudio");
-	    inputIdEstudio.setAttribute("value", selectedId);
-	    form.appendChild(inputIdEstudio);
+		var inputIdProyecto = document.createElement("input");
+	    inputIdProyecto.setAttribute("type", "hidden");
+	    inputIdProyecto.setAttribute("name", "idProyecto");
+	    inputIdProyecto.setAttribute("value", selectedId);
+	    form.appendChild(inputIdProyecto);
 	
 		var clickedButton = document.activeElement.id;
 	    var inputAction = document.createElement("input");
@@ -47,12 +47,12 @@ function cargarDatos() {
     }
 	
 	function reload(){
-		document.getElementById("idEstudio").value = "";
+		document.getElementById("idProyecto").value = "";
 	    document.getElementById("nuevoTitulo").value = "";
 	    document.getElementById("nuevaFecha").value = "";
-	    document.getElementById("nuevaLocalizacion").value = "";
+	    document.getElementById("nuevaFoto").value = "";
 	    document.getElementById("nuevaDescripcion").value = "";
-	    document.getElementById("nuevoCentro").value = "";
+	    document.getElementById("nuevoLink").value = "";
 	    document.getElementById("nuevoActivo").value = "";
 		setTimeout(function() {
 	        location.reload();

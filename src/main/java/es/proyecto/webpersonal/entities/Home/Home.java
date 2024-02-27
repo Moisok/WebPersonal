@@ -13,8 +13,6 @@ public class Home {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="titulo")
-	private String titulo;
 	
 	@Column(name="descripcion")
 	private String descripcion;
@@ -22,8 +20,7 @@ public class Home {
 	@Column(name="activo")
 	private int activo;
 
-	public Home(String titulo, String descripcion, int activo) {
-		this.titulo = titulo;
+	public Home(String descripcion, int activo) {
 		this.descripcion = descripcion;
 		this.activo = activo;
 	}
@@ -36,14 +33,6 @@ public class Home {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
 	}
 
 	public String getDescripcion() {

@@ -39,7 +39,6 @@ public class GestionarEstudiosController {
 		Model ModelEstudios) {
 		List<Estudios> losEstudios = estudiosService.getEstudios();
 		ModelEstudios.addAttribute("estudios", losEstudios);
-		System.out.println("Esto es: " + action);
 		if(id != null) {
 			Estudios estudio = estudiosService.getEstudio(id);
 			ModelEstudios.addAttribute("estudio", estudio);

@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Administrar Estudios</title>
+ <title>Administrar Proyectos</title>
  <meta charset="ISO-8859-1">
- <script type="text/javascript" src="${pageContext.request.contextPath}/js/estudiosadmin.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/js/proyectosadmin.js"></script>
  <style>
     table {
       width: 100%; /* O el ancho deseado */
@@ -26,68 +26,68 @@
 </head>
 <body>
 	<center>
-	<form method="post" action="/webpersonal/adminzone/gestionarestudios">
+	<form method="post" action="/webpersonal/adminzone/gestionarproyectos">
 	
     <input type="hidden" name="action" id="action" value="">
-    <input type="hidden" name="idEstudioSeleccionado" id="idEstudioSeleccionado" value="">
+    <input type="hidden" name="idProyectoSeleccionado" id="idProyectoSeleccionado" value="">
 
-    <select id="estudioSelect" name="idEstudio" onchange="cargarDatos()">
+    <select id="proyectoSelect" name="idProyecto" onchange="cargarDatos()">
     	<option value="" disabled selected>Selecciona Titulo</option>
-		<c:forEach var="estudiosTemp" items="${estudios}">
-			<option value="${estudiosTemp.id}">${estudiosTemp.titulo}</option>
+		<c:forEach var="proyectosTemp" items="${proyectos}">
+			<option value="${proyectosTemp.id}">${proyectosTemp.titulo}</option>
 		</c:forEach>
     </select>
     <br><br>
     Datos obtenidos/insertados (el id no se modifica):
     <table border="1">
 	    <% 
-	        String idEstudio = request.getParameter("idEstudio");
-	        if (idEstudio != null){
+	        String idProyecto = request.getParameter("idProyecto");
+	        if (idProyecto != null){
 	    %>
 	    <tr>
 	        <td>Id:</td>
 	        <td>
-	            <input  type="text" name="idEstudio" id="idEstudio" value="${estudio.id}" readonly/>
+	            <input  type="text" name="idProyecto" id="idProyecto" value="${proyecto.id}" readonly/>
 	        </td>
 	    </tr>
 	    <tr>
 	        <td>Titulo:</td>
 	        <td>
-	            <input type="text" name="nuevoTitulo" id="nuevoTitulo" value="${estudio.titulo}"/>
+	            <input type="text" name="nuevoTitulo" id="nuevoTitulo" value="${proyecto.titulo}"/>
 	        </td>
 	        
 	    </tr>
 	    <tr>
 	        <td>Fecha:</td>
 	        <td>
-	            <input type="text" name="nuevaFecha" id="nuevaFecha" value="${estudio.fecha}"/>
+	            <input type="text" name="nuevaFecha" id="nuevaFecha" value="${proyecto.fecha}"/>
 	        </td>
 	        
 	    </tr>
 	    <tr>
-	        <td>Localizacion:</td>
+	        <td>Foto:</td>
 	        <td>
-	            <input type="text" name="nuevaLocalizacion" id="nuevaLocalizacion" value="${estudio.localizacion}"/>
+	            <input type="text" name="nuevaFoto" id="nuevaFoto" value="${proyecto.foto}"/>
 	        </td>
 	    </tr>
 	    <tr>
 	        <td>Descripcion:</td>
 	        <td>
-	            <textarea name="nuevaDescripcion" id="nuevaDescripcion">${estudio.descripcion}</textarea>
+	            <textarea name="nuevaDescripcion" id="nuevaDescripcion">${proyecto.descripcion}</textarea>
 	        </td>
 	        
 	    </tr>
 	    <tr>
-	        <td>Centro:</td>
+	        <td>Link de git:</td>
 	        <td>
-	            <input type="text" name="nuevoCentro" id="nuevoCentro" value="${estudio.centro}"/>
+	            <input type="text" name="nuevoLink" id="nuevoLink" value="${proyecto.link}"/>
 	        </td>
 	        
 	    </tr>
 	    <tr>
 	        <td>¿Activo?:</td>
 	        <td>
-	            <input type="text" name="nuevoActivo" id="nuevoActivo" type="text" value="${estudio.activo}"/>
+	            <input type="text" name="nuevoActivo" id="nuevoActivo" type="text" value="${proyecto.activo}"/>
 	        </td>
 	    </tr>
 	    <%
@@ -96,7 +96,7 @@
 	    <tr>
 	        <td>Id:</td>
 	        <td>
-	            <input  type="text" name="idEstudio" id="idEstudio"  readonly/>
+	            <input  type="text" name="idProyecto" id="idProyecto"  readonly/>
 	        </td>
 	    </tr>
 	    <tr>
@@ -113,9 +113,9 @@
 	        
 	    </tr>
 	    <tr>
-	        <td>Localizacion:</td>
+	        <td>Foto:</td>
 	        <td>
-	            <input type="text" name="nuevaLocalizacion" id="nuevaLocalizacion"/>
+	            <input type="text" name="nuevaFoto" id="nuevaFoto"/>
 	        </td>
 	    </tr>
 	    <tr>
@@ -126,9 +126,9 @@
 	        
 	    </tr>
 	    <tr>
-	        <td>Centro:</td>
+	        <td>Link de git:</td>
 	        <td>
-	            <input type="text" name="nuevoCentro" id="nuevoCentro"/>
+	            <input type="text" name="nuevoLink" id="nuevoLink"/>
 	        </td>
 	        
 	    </tr>

@@ -6,6 +6,6 @@ public interface HomeService {
 	
 	public Home getDescripcion();
 	
-	public void updateDesripcion(int id, String titulo, String descripcion);
+	public void updateDesripcion(int id, String descripcion);
 	
 }

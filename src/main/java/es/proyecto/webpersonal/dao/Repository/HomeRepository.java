@@ -20,10 +20,9 @@ public class HomeRepository implements HomeDao {
 	}
 
 	@Override
-	public void updateDesripcion(int id, String titulo, String descripcion) {
+	public void updateDesripcion(int id, String descripcion) {
 		Home home = entityManager.find(Home.class, 1);
-		home.setTitulo(titulo);
-		home.setTitulo(descripcion);
+		home.setDescripcion(descripcion);
 	}
 
 

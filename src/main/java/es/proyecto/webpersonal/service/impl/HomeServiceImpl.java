@@ -24,8 +24,8 @@ public class HomeServiceImpl implements HomeService {
 	}
 
 	@Override
-	public void updateDesripcion(int id, String titulo, String descripcion) {
-		homeDao.updateDesripcion(id, titulo, descripcion);
+	public void updateDesripcion(int id,  String descripcion) {
+		homeDao.updateDesripcion(id, descripcion);
 	}
 
 }

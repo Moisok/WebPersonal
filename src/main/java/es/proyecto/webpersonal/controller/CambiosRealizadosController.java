@@ -29,5 +29,14 @@ public class CambiosRealizadosController {
 		return "redirect:/adminzone/gestionarestudios";
 	}
 	
+	@RequestMapping("/proyecto")
+	public String volverProyectos() {
+		return "redirect:/adminzone/gestionarproyectos";
+	}
 	
+	@RequestMapping("/home")
+	public String volverHome() {
+		return "redirect:/adminzone/gestionarhome";
+	}
+
 }
