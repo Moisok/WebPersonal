@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import es.proyecto.webpersonal.entities.Proyectos.Proyectos;
+import es.proyecto.webpersonal.entities.Proyectos;
 import es.proyecto.webpersonal.service.ProyectosService;
 
 @Controller

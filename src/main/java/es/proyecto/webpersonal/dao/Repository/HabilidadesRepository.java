@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 
 import es.proyecto.webpersonal.dao.HabilidadesDao;
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Habilidades;
 
 
 @Repository

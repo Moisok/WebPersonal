@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import es.proyecto.webpersonal.dao.HabilidadesDao;
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Habilidades;
 import es.proyecto.webpersonal.service.HabilidadesService;
 
 @Service

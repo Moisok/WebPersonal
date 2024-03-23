@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import es.proyecto.webpersonal.dao.EstudiosDao;
-import es.proyecto.webpersonal.entities.Estudios.Estudios;
+import es.proyecto.webpersonal.entities.Estudios;
 import es.proyecto.webpersonal.service.EstudiosService;
 
 @Service

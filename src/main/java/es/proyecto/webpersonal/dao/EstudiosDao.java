@@ -2,8 +2,7 @@ package es.proyecto.webpersonal.dao;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Estudios.Estudios;
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Estudios;
 
 //Todos los dao deben tener 5 metodos (excepto "Home")
 //1: Listar 

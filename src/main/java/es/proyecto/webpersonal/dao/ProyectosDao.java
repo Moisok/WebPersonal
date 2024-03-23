@@ -2,8 +2,7 @@ package es.proyecto.webpersonal.dao;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
-import es.proyecto.webpersonal.entities.Proyectos.Proyectos;
+import es.proyecto.webpersonal.entities.Proyectos;
 
 public interface ProyectosDao {
 	

@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.dao;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Experiencia.Experiencia;
+import es.proyecto.webpersonal.entities.Experiencia;
 
 public interface ExperienciaDao {
 	

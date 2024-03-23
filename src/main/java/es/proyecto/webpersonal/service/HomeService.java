@@ -1,6 +1,6 @@
 package es.proyecto.webpersonal.service;
 
-import es.proyecto.webpersonal.entities.Home.Home;
+import es.proyecto.webpersonal.entities.Home;
 
 public interface HomeService {
 	

@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Proyectos.Proyectos;
+import es.proyecto.webpersonal.entities.Proyectos;
 
 public interface ProyectosService {
 	

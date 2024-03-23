@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import es.proyecto.webpersonal.dao.TecnologiasDao;
-import es.proyecto.webpersonal.entities.Tecnologias.Tecnologias;
+import es.proyecto.webpersonal.entities.Tecnologias;
 
 @Repository
 public class TecnologiasRepository implements TecnologiasDao {

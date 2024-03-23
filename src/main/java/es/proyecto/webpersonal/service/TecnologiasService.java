@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Tecnologias.Tecnologias;
+import es.proyecto.webpersonal.entities.Tecnologias;
 
 public interface TecnologiasService {
 	

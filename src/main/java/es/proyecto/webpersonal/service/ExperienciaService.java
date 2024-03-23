@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Experiencia.Experiencia;
+import es.proyecto.webpersonal.entities.Experiencia;
 
 public interface ExperienciaService {
 	

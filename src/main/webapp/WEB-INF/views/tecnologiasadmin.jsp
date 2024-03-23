@@ -17,7 +17,7 @@
     <input type="hidden" name="idTecnologiaSeleccionada" id="idTecnologiaSeleccionada" value="">
 
     <select id="tecnologiaSelect" name="idTecnologia" onchange="cargarDatos()">
-    	<option value="" disabled selected>Selecciona una tecnología</option>
+    	<option value="" disabled selected>Selecciona una tecnologia</option>
 		<c:forEach var="tecnologiaTemp" items="${tecnologias}">
 			<option value="${tecnologiaTemp.id}">${tecnologiaTemp.tecnologia}</option>
 		</c:forEach>
@@ -42,7 +42,7 @@
 	        </td>
 	    </tr>
 	    <tr>
-	        <td>¿Activo?:</td>
+	        <td>Activo?:</td>
 	        <td>
 	            <input type="text" name="nuevoActivo" id="nuevoActivo" type="text" value="${tecnologia.activo}"/>
 	        </td>
@@ -63,7 +63,7 @@
 	        </td>
 	    </tr>
 	    <tr>
-	        <td>¿Activo?:</td>
+	        <td>ï¿½Activo?:</td>
 	        <td>
 	            <input type="text" name="nuevoActivo" id="nuevoActivo"/>
 	        </td>

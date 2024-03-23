@@ -6,7 +6,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import es.proyecto.webpersonal.dao.HomeDao;
-import es.proyecto.webpersonal.entities.Home.Home;
+import es.proyecto.webpersonal.entities.Home;
 
 @Repository
 public class HomeRepository implements HomeDao {

@@ -1,14 +1,13 @@
-package es.proyecto.webpersonal.entities.Tecnologias;
+package es.proyecto.webpersonal.dto;
 
 public class TecnologiasDTO {
-
-	private int id;
 	
-	private String tecnologia;
+	private String action;
+    private int id;
+    private String tecnologia;
+    private String activo; 
 
-	private int activo;
-
-	public TecnologiasDTO(String tecnologia, int activo) {
+	public TecnologiasDTO(String tecnologia, String activo) {
 		this.tecnologia = tecnologia;
 		this.activo = activo;
 	}
@@ -32,12 +31,20 @@ public class TecnologiasDTO {
 		this.tecnologia = tecnologia;
 	}
 
-	public int getActivo() {
+	public String getActivo() {
 		return activo;
 	}
 
-	public void setActivo(int activo) {
+	public void setActivo(String activo) {
 		this.activo = activo;
+	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
 	}
 	
 }

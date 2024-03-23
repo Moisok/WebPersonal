@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Habilidades;
 
 
 public interface HabilidadesService {

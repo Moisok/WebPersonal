@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.proyecto.webpersonal.entities.Experiencia.Experiencia;
+import es.proyecto.webpersonal.entities.Experiencia;
 import es.proyecto.webpersonal.service.ExperienciaService;
 
 import es.proyecto.webpersonal.dao.ExperienciaDao;

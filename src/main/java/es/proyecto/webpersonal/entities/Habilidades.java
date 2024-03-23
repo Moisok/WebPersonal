@@ -1,20 +1,30 @@
-package es.proyecto.webpersonal.entities.Habilidades;
+package es.proyecto.webpersonal.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class HabilidadesDTO {
-
+@Entity
+@Table(name="habilidades")
+public class Habilidades {
+	
+	@Id
+	@Column(name="id")
 	private int id;
 	
+	@Column(name="habilidad")
 	private String habilidad;
 	
+	@Column(name="activo")
 	private int activo;
 
-	public HabilidadesDTO(String habilidad, int activo) {
+	public Habilidades(String habilidad, int activo) {
 		this.habilidad = habilidad;
 		this.activo = activo;
 	}
 
-	public HabilidadesDTO() {
+	public Habilidades() {
 	}
 
 	public int getId() {

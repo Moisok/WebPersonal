@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Habilidades;
 import es.proyecto.webpersonal.service.HabilidadesService;
 
 

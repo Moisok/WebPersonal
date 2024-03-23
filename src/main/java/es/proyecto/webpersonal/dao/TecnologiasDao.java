@@ -2,9 +2,8 @@ package es.proyecto.webpersonal.dao;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 
-import es.proyecto.webpersonal.entities.Tecnologias.Tecnologias;
+import es.proyecto.webpersonal.entities.Tecnologias;
 
 public interface TecnologiasDao  {
 	

@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import es.proyecto.webpersonal.dao.EstudiosDao;
-import es.proyecto.webpersonal.entities.Estudios.Estudios;
+import es.proyecto.webpersonal.entities.Estudios;
 
 @Repository
 public class EstudiosRepository implements EstudiosDao {

@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import es.proyecto.webpersonal.dao.HomeDao;
-import es.proyecto.webpersonal.entities.Home.Home;
+import es.proyecto.webpersonal.entities.Home;
 import es.proyecto.webpersonal.service.HomeService;
 
 @Service

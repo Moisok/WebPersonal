@@ -1,4 +1,4 @@
-package es.proyecto.webpersonal.entities.Home;
+package es.proyecto.webpersonal.dto;
 
 public class HomeDTO {
 

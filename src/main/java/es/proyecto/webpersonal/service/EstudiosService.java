@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.service;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Estudios.Estudios;
+import es.proyecto.webpersonal.entities.Estudios;
 
 public interface EstudiosService {
 	

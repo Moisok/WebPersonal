@@ -2,7 +2,7 @@ package es.proyecto.webpersonal.dao;
 
 import java.util.List;
 
-import es.proyecto.webpersonal.entities.Habilidades.Habilidades;
+import es.proyecto.webpersonal.entities.Habilidades;
 
 public interface HabilidadesDao {
 	

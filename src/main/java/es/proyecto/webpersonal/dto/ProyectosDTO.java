@@ -1,4 +1,4 @@
-package es.proyecto.webpersonal.entities.Proyectos;
+package es.proyecto.webpersonal.dto;
 
 public class ProyectosDTO {
 	

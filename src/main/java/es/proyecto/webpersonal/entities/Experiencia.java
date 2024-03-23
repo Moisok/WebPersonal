@@ -1,31 +1,42 @@
-package es.proyecto.webpersonal.entities.Estudios;
+package es.proyecto.webpersonal.entities;
 
-public class EstudiosDTO {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="experiencia")
+public class Experiencia {
 	
+	@Id
+	@Column(name="id")
 	private int id;
-
-	private String fecha;
-
-	private String titulo;
 	
+	@Column(name="fecha")
+	private String fecha;
+	
+	@Column(name="puesto")
+	private String puesto;
+	
+	@Column(name="localizacion")
 	private String localizacion;
-
-	private String centro;
-
+	
+	@Column(name="descripcion")
 	private String descripcion;
-
+	
+	@Column(name="activo")
 	private int activo;
 
-	public EstudiosDTO(String fecha, String titulo, String localizacion, String descripcion, String centro, int activo) {
+	public Experiencia(String fecha, String puesto, String localizacion, String descripcion, int activo) {
 		this.fecha = fecha;
-		this.titulo = titulo;
+		this.puesto = puesto;
 		this.localizacion = localizacion;
 		this.descripcion = descripcion;
 		this.activo = activo;
-		this.centro = centro;
 	}
 
-	public EstudiosDTO() {
+	public Experiencia() {
 	}
 
 	public int getId() {
@@ -44,12 +55,12 @@ public class EstudiosDTO {
 		this.fecha = fecha;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getPuesto() {
+		return puesto;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setPuesto(String puesto) {
+		this.puesto = puesto;
 	}
 
 	public String getLocalizacion() {
@@ -75,13 +86,8 @@ public class EstudiosDTO {
 	public void setActivo(int activo) {
 		this.activo = activo;
 	}
-
-	public String getCentro() {
-		return centro;
-	}
-
-	public void setCentro(String centro) {
-		this.centro = centro;
-	}
+	
+	
+	
 	
 }

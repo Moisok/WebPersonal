@@ -1,28 +1,31 @@
-package es.proyecto.webpersonal.entities.Experiencia;
+package es.proyecto.webpersonal.dto;
 
-public class ExperienciaDTO {
+public class EstudiosDTO {
 	
 	private int id;
 
 	private String fecha;
 
-	private String puesto;
-
+	private String titulo;
+	
 	private String localizacion;
+
+	private String centro;
 
 	private String descripcion;
 
 	private int activo;
 
-	public ExperienciaDTO(String fecha, String puesto, String localizacion, String descripcion, int activo) {
+	public EstudiosDTO(String fecha, String titulo, String localizacion, String descripcion, String centro, int activo) {
 		this.fecha = fecha;
-		this.puesto = puesto;
+		this.titulo = titulo;
 		this.localizacion = localizacion;
 		this.descripcion = descripcion;
 		this.activo = activo;
+		this.centro = centro;
 	}
 
-	public ExperienciaDTO() {
+	public EstudiosDTO() {
 	}
 
 	public int getId() {
@@ -41,12 +44,12 @@ public class ExperienciaDTO {
 		this.fecha = fecha;
 	}
 
-	public String getPuesto() {
-		return puesto;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setPuesto(String puesto) {
-		this.puesto = puesto;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getLocalizacion() {
@@ -72,8 +75,13 @@ public class ExperienciaDTO {
 	public void setActivo(int activo) {
 		this.activo = activo;
 	}
-	
-	
-	
+
+	public String getCentro() {
+		return centro;
+	}
+
+	public void setCentro(String centro) {
+		this.centro = centro;
+	}
 	
 }
