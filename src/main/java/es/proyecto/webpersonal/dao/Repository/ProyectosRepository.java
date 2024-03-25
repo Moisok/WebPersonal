@@ -18,7 +18,7 @@ public class ProyectosRepository implements ProyectosDao {
 
 	@Override
 	public List<Proyectos> getProyectos() {
-		return entityManager.createQuery("from Proyectos", Proyectos.class).getResultList();
+		return entityManager.createQuery("from Proyectos e ORDER BY e.id DESC", Proyectos.class).getResultList();
 	}
 
 	@Override

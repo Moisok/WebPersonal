@@ -18,7 +18,7 @@ public class ExperienciaRepository implements ExperienciaDao {
 	
 	@Override
 	public List<Experiencia> getExperiencias() {
-		return entityManager.createQuery("from Experiencia", Experiencia.class).getResultList();
+		return entityManager.createQuery("FROM Experiencia e ORDER BY e.id DESC", Experiencia.class).getResultList();
 	}
 
 	@Override

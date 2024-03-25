@@ -18,7 +18,7 @@ public class EstudiosRepository implements EstudiosDao {
 
 	@Override
 	public List<Estudios> getEstudios() {
-		return entityManager.createQuery("from Estudios", Estudios.class).getResultList();
+		return entityManager.createQuery("FROM Estudios e ORDER BY e.id DESC", Estudios.class).getResultList();
 	}
 
 	@Override

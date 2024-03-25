@@ -9,18 +9,18 @@
  <script type="text/javascript" src="${pageContext.request.contextPath}/js/proyectosadmin.js"></script>
  <style>
     table {
-      width: 100%; /* O el ancho deseado */
+      width: 100%; 
       border-collapse: collapse;
     }
 
     th, td {
       border: 1px solid black;
-      padding: 10px; /* O el padding deseado */
+      padding: 10px; 
       text-align: left;
     }
     #nuevaDescripcion {
-	  height: 100px; /* O la altura deseada */
-	  width: 800px; /* O el ancho deseado */
+	  height: 100px; 
+	  width: 800px; 
 	}
   </style>
 </head>
@@ -73,7 +73,7 @@
 	    <tr>
 	        <td>Descripcion:</td>
 	        <td>
-	            <textarea name="nuevaDescripcion" id="nuevaDescripcion">${proyecto.descripcion}</textarea>
+	            <textarea name="nuevaDescripcion" id="nuevaDescripcion" maxlength="205">${proyecto.descripcion}</textarea>
 	        </td>
 	        
 	    </tr>
@@ -121,7 +121,7 @@
 	    <tr>
 	        <td>Descripcion:</td>
 	        <td>
-	             <textarea name="nuevaDescripcion" id="nuevaDescripcion"/></textarea>
+	             <textarea name="nuevaDescripcion" id="nuevaDescripcion" maxlength="205"></textarea>
     		</td>
 	        
 	    </tr>
